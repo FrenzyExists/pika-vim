@@ -13,5 +13,20 @@ return require('packer').startup(function(use, cmd)
     }
 
     use 'nvim-lua/plenary.nvim'
+
+    use {
+        'glepnir/dashboard-nvim',
+        config = function()
+            require 'plugins.dashboard'
+        end
+    }
+
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require 'plugins.telescope'
+        end
+    }
     
 end)
