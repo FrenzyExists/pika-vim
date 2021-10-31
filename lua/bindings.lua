@@ -120,7 +120,7 @@ map("i", "{", "{}<Left>")
 map("i", "{}", "{}<Left>", opt)
 
 map("i", "\"", "\"\"<Left>")
-map("i", "\"\""", "\"\"<Left>", opt)
+map("i", "\"\"", "\"\"<Left>", opt)
 
 map("i", "'", "''<Left>")
 map("i", "'''", "''<Left>", opt)
