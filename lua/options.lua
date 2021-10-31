@@ -72,6 +72,7 @@ Pika.settings = function()
 	for _, plugin in pairs(disabled_builtins) do
 	    g["loaded_" .. plugin] = 1
 	end
+    g.aquarium_style = "light"
 
 	-- totally not stolen from Theory of Everything
 	o.completeopt = "menuone,noselect"

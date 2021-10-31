@@ -1,6 +1,10 @@
-
 -- Btw, the config part is related to the plugins
-return require('packer').startup(function(use, cmd)
+return require('packer').startup(function(use)
+    local opt = vim.opt
+    local g = vim.g
+    local o = vim.o
+    local cmd = vim.cmd
+
     use 'wbthomason/packer.nvim'
 
     use 'frenzyexists/aquarium-vim'
@@ -32,6 +36,42 @@ return require('packer').startup(function(use, cmd)
         end
     }
 
+    use {
+        'folke/which-key.nvim',
+        config = function() require("which-key").setup {} end
+        event = "BufWinEnter",
+        isable = not which_key.active,
+    }
+
+    use {
+        'kyazdani42/nvim-tree.lua',
+        requires = 'FrenzyExists/nvim-web-devicons',
+        config = function() require'nvim-tree'.setup {} end
+    }
+
+    use {
+        'antoinemadec/FixCursorHold.nvim',
+        config = function()
+            g.cursorhold_updatetime = 100
+        end
+    }
+
+    use {
+        "akinsho/toggleterm.nvim",
+        config = function() require("toggleterm").setup {} end
+    }
+
+    use {
+        'kristijanhusak/orgmode.nvim', 
+        config = function() require('orgmode').setup {} end
+    }
+
+    use 'FrenzyExists/nvim-web-devicons'
+
+    use {
+        'numToStr/Comment.nvim',
+        config = function() require('Comment').setup {} end
+    }
+
   --  use 'SirVer/ultisnips'
-    
 end)
