@@ -78,6 +78,7 @@ Pika.settings = function()
 
 	-- Don't show statusline on vimterm
 	cmd [[ au TermOpen term://* setlocal nonumber laststatus=0 ]]
+    cmd("set guicursor=n-v-c-i-ci-ve-sm:blinkon1,i-ci-ve:hor100-iCursor,n:Cursor,v-c:-CursorIM")
     cmd("colorscheme aquarium") -- Set Colorscheme
 	cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none guifg=none"
 	cmd("set fillchars+=vert:\\|")

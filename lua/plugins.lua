@@ -10,6 +10,9 @@ return require('packer').startup(function(use, cmd)
     use {
         'lewis6991/gitsigns.nvim',
         requires = 'nvim-lua/plenary.nvim',
+        config = function()
+            require 'plugins.gitsigns'
+        end
     }
 
     use 'nvim-lua/plenary.nvim'
@@ -28,5 +31,7 @@ return require('packer').startup(function(use, cmd)
             require 'plugins.telescope'
         end
     }
+
+  --  use 'SirVer/ultisnips'
     
 end)
