@@ -69,6 +69,15 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["Comment.nvim"] = {
+    config = { "\27LJ\1\0029\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\fComment\frequire\0" },
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/Comment.nvim"
+  },
+  ["FixCursorHold.nvim"] = {
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/FixCursorHold.nvim"
+  },
   ["aquarium-vim"] = {
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/aquarium-vim"
@@ -87,6 +96,20 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua"
   },
+  ["nvim-tree.lua"] = {
+    config = { "\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0" },
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+  },
+  ["orgmode.nvim"] = {
+    config = { "\27LJ\1\0029\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\forgmode\frequire\0" },
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/orgmode.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/packer.nvim"
@@ -99,10 +122,24 @@ _G.packer_plugins = {
     config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.telescope\frequire\0" },
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["toggleterm.nvim"] = {
+    config = { "\27LJ\1\2<\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\15toggleterm\frequire\0" },
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/toggleterm.nvim"
+  },
+  ["which-key.nvim"] = {
+    config = { "\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0" },
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: orgmode.nvim
+time([[Config for orgmode.nvim]], true)
+try_loadstring("\27LJ\1\0029\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\forgmode\frequire\0", "config", "orgmode.nvim")
+time([[Config for orgmode.nvim]], false)
 -- Config for: telescope.nvim
 time([[Config for telescope.nvim]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.telescope\frequire\0", "config", "telescope.nvim")
@@ -115,6 +152,22 @@ time([[Config for gitsigns.nvim]], false)
 time([[Config for dashboard-nvim]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.dashboard\frequire\0", "config", "dashboard-nvim")
 time([[Config for dashboard-nvim]], false)
+-- Config for: which-key.nvim
+time([[Config for which-key.nvim]], true)
+try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14which-key\frequire\0", "config", "which-key.nvim")
+time([[Config for which-key.nvim]], false)
+-- Config for: Comment.nvim
+time([[Config for Comment.nvim]], true)
+try_loadstring("\27LJ\1\0029\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\fComment\frequire\0", "config", "Comment.nvim")
+time([[Config for Comment.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
+-- Config for: toggleterm.nvim
+time([[Config for toggleterm.nvim]], true)
+try_loadstring("\27LJ\1\2<\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\15toggleterm\frequire\0", "config", "toggleterm.nvim")
+time([[Config for toggleterm.nvim]], false)
 if should_profile then save_profiles() end
 
 end)

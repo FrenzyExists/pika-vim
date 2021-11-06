@@ -3,4 +3,4 @@
 require('bindings') -- lua/bindings.lua
 require('plugins') -- lua/plugins.lua
 require('options').settings() -- lua/options.lua
-
+require('options').autocmds() -- lua/options.lua

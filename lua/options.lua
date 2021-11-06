@@ -1,14 +1,14 @@
 -- Partly taken from LunarVim to adapt original vimscript bindings
 local Pika = { }
 
+	-- Import this shit
+local opt = vim.opt
+local g = vim.g
+local o = vim.o
+local cmd = vim.cmd
+
 -- Hoy voy a romper noche
 Pika.settings = function()
-
-	-- Import this shit
-	local opt = vim.opt
-	local g = vim.g
-	local o = vim.o
-	local cmd = vim.cmd
 
 	-- PikaVim Default Settings
 	local defaults = {
@@ -72,7 +72,7 @@ Pika.settings = function()
 	for _, plugin in pairs(disabled_builtins) do
 	    g["loaded_" .. plugin] = 1
 	end
-    g.aquarium_style = "light"
+    g.aquarium_style = "dark"
 
 	-- totally not stolen from Theory of Everything
 	o.completeopt = "menuone,noselect"
@@ -84,4 +84,41 @@ Pika.settings = function()
 	cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none guifg=none"
 	cmd("set fillchars+=vert:\\|")
 end
+
+-- | A U T O C M D S | --
+
+-- Te mire y tú me entendiste... baby ya estamos solos
+Pika.autocmds = function()
+    local g = vim.g
+    local fn = vim.fn
+    local cmd = vim.cmd
+    local opt = vim.opt
+    local exec = vim.api.nvim_exec
+
+    -- Don't clear clipboard when exiting
+    cmd [[autocmd VimLeave * call system("xsel -ib", getreg('+'))]]
+
+    -- If no filetype/filename then set filetype to text
+    cmd [[autocmd BufEnter * if expand('%') ==# '' | setfiletype text | endif]]
+    cmd [[autocmd BufEnter * if &filetype ==# '' | setlocal filetype=text | endif]]
+
+    cmd [[
+    autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
+    autocmd TermOpen * startinsert
+    autocmd BufLeave term://* stopinsert
+    ]]
+
+    -- remove whitespace on save
+    cmd [[au BufWritePre * :%s/\s\+$//e]]
+
+    -- highlight on yank
+    exec([[
+    augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+    augroup end
+    ]], false)
+end
+
+
 return Pika

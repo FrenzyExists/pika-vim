@@ -109,16 +109,12 @@ map("v", "Y", "y$", opt)
 -- Pairing Braces
 map("i", "<>", "<><Left>", opt)
 
-map("i", "(", "()<Left>")
 map("i", "()", "()<Left>", opt)
 
-map("i", "[", "[]<>Left>")
-map("i", "[", "[]<>Left>", opt)
+map("i", "[]", "[]<Left>", opt)
 
-map("i", "{", "{}<Left>")
 map("i", "{}", "{}<Left>", opt)
 
-map("i", "\"", "\"\"<Left>")
 map("i", "\"\"", "\"\"<Left>", opt)
 
 map("i", "'''", "''<Left>", opt)

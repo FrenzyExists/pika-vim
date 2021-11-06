@@ -38,21 +38,16 @@ return require('packer').startup(function(use)
 
     use {
         'folke/which-key.nvim',
-        config = function() require("which-key").setup() {} end
+        config = function() require("which-key").setup {} end
     }
 
     use {
         'kyazdani42/nvim-tree.lua',
         requires = 'FrenzyExists/nvim-web-devicons',
-        config = function() require'nvim-tree'.setup() {} end
+        config = function() require'nvim-tree'.setup {} end
     }
 
-    use {
-        'antoinemadec/FixCursorHold.nvim',
-        config = function()
-            g.cursorhold_updatetime = 100
-        end
-    }
+    use 'antoinemadec/FixCursorHold.nvim'
 
     use {
         "akinsho/toggleterm.nvim",
@@ -61,6 +56,7 @@ return require('packer').startup(function(use)
 
     use {
         'kristijanhusak/orgmode.nvim', 
+        branch = 'tree-sitter',
         config = function() require('orgmode').setup {} end
     }
 
