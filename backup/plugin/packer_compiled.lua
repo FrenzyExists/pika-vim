@@ -57,7 +57,7 @@ end
 time([[Luarocks path setup]], false)
 time([[try_loadstring definition]], true)
 local function try_loadstring(s, component, name)
-  local success, result = pcall(loadstring(s), name, _G.packer_plugins[name])
+  local success, result = pcall(loadstring(s))
   if not success then
     vim.schedule(function()
       vim.api.nvim_notify('packer.nvim: Error running ' .. component .. ' for ' .. name .. ': ' .. result, vim.log.levels.ERROR, {})
@@ -69,33 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
-  ["aquarium-vim"] = {
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/aquarium-vim",
-    url = "/home/pikachu/Documents/Projects/vim-projects/aquarium-vim"
-  },
   ["dashboard-nvim"] = {
     config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.dashboard\frequire\0" },
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
-  },
-  ["dashy-lua"] = {
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/dashy-lua",
-    url = "/home/pikachu/Documents/Projects/lua-projects/dashy-lua"
-  },
-  ["feline.nvim"] = {
-    config = { "\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugins.feline\frequire\0" },
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "/home/pikachu/Documents/Projects/lua-projects/feline.nvim"
-  },
-  ["gitsigns.nvim"] = {
-    config = { "\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.gitsigns\frequire\0" },
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
-    url = "https://github.com/lewis6991/gitsigns.nvim"
   },
   ["nvim-colorizer.lua"] = {
     loaded = true,
@@ -111,32 +89,12 @@ _G.packer_plugins = {
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
-    url = "https://github.com/kyazdani42/nvim-web-devicons"
+    url = "https://github.com/FrenzyExists/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
-  },
-  ["plenary.nvim"] = {
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/plenary.nvim",
-    url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["run.nvim"] = {
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/run.nvim",
-    url = "https://github.com/Manas140/run.nvim"
-  },
-  ["uwu.vim"] = {
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/uwu.vim",
-    url = "/home/pikachu/Documents/Projects/vim-projects/uwu.vim"
-  },
-  ["vim-sneak"] = {
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/vim-sneak",
-    url = "https://github.com/justinmk/vim-sneak"
   }
 }
 
@@ -145,14 +103,6 @@ time([[Defining packer_plugins]], false)
 time([[Config for nvim-tree.lua]], true)
 try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
--- Config for: feline.nvim
-time([[Config for feline.nvim]], true)
-try_loadstring("\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugins.feline\frequire\0", "config", "feline.nvim")
-time([[Config for feline.nvim]], false)
--- Config for: gitsigns.nvim
-time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.gitsigns\frequire\0", "config", "gitsigns.nvim")
-time([[Config for gitsigns.nvim]], false)
 -- Config for: dashboard-nvim
 time([[Config for dashboard-nvim]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.dashboard\frequire\0", "config", "dashboard-nvim")

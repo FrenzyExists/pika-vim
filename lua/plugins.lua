@@ -7,19 +7,20 @@ return require('packer').startup(function(use)
 
     use 'wbthomason/packer.nvim'
 
-    use 'frenzyexists/aquarium-vim'
+    use '/home/pikachu/Documents/Projects/vim-projects/aquarium-vim'
+
+    use '/home/pikachu/Documents/Projects/vim-projects/uwu.vim'
+
+   -- use {
+   --     'neovim/nvim-lspconfig',
+   --     config = function()
+   --         require 'plugins.lspconfig'
+   --     end
+   -- }
 
     use 'norcalli/nvim-colorizer.lua'
 
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = 'nvim-lua/plenary.nvim',
-        config = function()
-            require 'plugins.gitsigns'
-        end
-    }
-
-    use 'nvim-lua/plenary.nvim'
+    -- use "lukas-reineke/indent-blankline.nvim"
 
     use {
         'glepnir/dashboard-nvim',
@@ -29,43 +30,32 @@ return require('packer').startup(function(use)
     }
 
     use {
-        'nvim-telescope/telescope.nvim',
+        'lewis6991/gitsigns.nvim',
         requires = 'nvim-lua/plenary.nvim',
         config = function()
-            require 'plugins.telescope'
+            require 'plugins.gitsigns'
         end
     }
+    use '~/Documents/Projects/lua-projects/dashy-lua'
+
+    --use {
+     --   "akinsho/toggleterm.nvim",
+    --    config = function() require("toggleterm").setup {} end
+    --}
+
+    use 'kyazdani42/nvim-web-devicons'
+
+	use { '~/Documents/Projects/lua-projects/feline.nvim',
+    config = function() require 'plugins.feline' end }
+
+    use 'Manas140/run.nvim'
 
     use {
-        'folke/which-key.nvim',
-        config = function() require("which-key").setup {} end
-    }
+    'kyazdani42/nvim-tree.lua',
+    requires = {'kyazdani42/nvim-web-devicons',},
+    config = function() require'nvim-tree'.setup {} end }
 
-    use {
-        'kyazdani42/nvim-tree.lua',
-        requires = 'FrenzyExists/nvim-web-devicons',
-        config = function() require'nvim-tree'.setup {} end
-    }
+    use 'justinmk/vim-sneak'
 
-    use 'antoinemadec/FixCursorHold.nvim'
-
-    use {
-        "akinsho/toggleterm.nvim",
-        config = function() require("toggleterm").setup {} end
-    }
-
-    use {
-        'kristijanhusak/orgmode.nvim', 
-        branch = 'tree-sitter',
-        config = function() require('orgmode').setup {} end
-    }
-
-    use 'FrenzyExists/nvim-web-devicons'
-
-    use {
-        'numToStr/Comment.nvim',
-        config = function() require('Comment').setup {} end
-    }
-
-  --  use 'SirVer/ultisnips'
 end)
+
