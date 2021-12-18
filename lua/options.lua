@@ -24,6 +24,8 @@ Pika.settings = function()
         spelllang = "en",
         swapfile = false, -- That's what she said
         smartindent = true, -- make indenting smarter again
+        copyindent = true,
+        preserveindent = true,
         smartcase = true, -- smart case
         showmode = false, -- Who the fuck needs this when we have a statusline?
         breakindent = true, -- Indent lines wrapped in the view
@@ -31,6 +33,7 @@ Pika.settings = function()
         pumheight = 10, -- pop up menu height
         updatetime = 250, -- update interval for gitsigns
         fileencoding = "utf-8", -- the encoding written to a file
+        incsearch = true, -- -- Incremental search
         conceallevel = 0, -- so that `` is visible in markdown files
         guifont = "Operator Mono:h15", -- the font used in graphical neovim applications
         timeoutlen = 250, -- time to wait for a mapped sequence to complete in ms
@@ -66,23 +69,18 @@ Pika.settings = function()
 		"vimballPlugin",
     }
 
-    --opt.list = true
-    --opt.listchars:append("space:⋅")
-    -- listchars:append("eol:↴")
-
-                --opt.list = true
-        --    opt.listchars:append("space:⋅")
-          --  opt.listchars:append("eol:↴")
-
-    --require("indent_blankline").setup {
-        --show_current_context = true,
-        --show_current_context_start = true,
-      --  show_end_of_line = true,
-    --}
-
-
-	opt.fillchars = {eob = " "} -- No tilde on end of buffer
 	g.auto_save = false -- I save when I feel like
+
+    opt.fillchars = {
+        vert = "▕",
+        fold = " ",
+        eob = " ", -- -- No tilde on end of buffer
+        diff = "─",
+        msgsep = "‾",
+        foldopen = "▾",
+        foldclose = "▸",
+        foldsep = "│",
+    }
 
 	-- Parse new defaults
 	for k, v in pairs(defaults) do
@@ -103,7 +101,6 @@ Pika.settings = function()
     --cmd("set guicursor=n-v-c-i-ci-ve-sm:blinkon1,i-ci-ve:hor100-iCursor,n:Cursor,v-c:-CursorIM")
     cmd("colorscheme aquarium") -- Set Colorscheme
 	cmd "au ColorScheme * hi SignColumn ctermbg=none guibg=none guifg=none"
-	cmd("set fillchars+=vert:\\|")
 end
 
 -- | A U T O C M D S | --
@@ -118,9 +115,6 @@ Pika.autocmds = function()
 
     -- Set min window height to 0
     cmd [[ set wmh=0 ]]
-
-    -- Incremental search
-    cmd [[ set incsearch ]]
 
     -- Make room for minheight change
     cmd [[ set winheight=1 ]]

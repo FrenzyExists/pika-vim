@@ -3,7 +3,7 @@ local api = vim.api
 local utils = {}
 
 -- Function taken from NvimChad
-function utils.map(mode, lhs, rhs, opts)
+utils.map function(mode, lhs, rhs, opts)
     local options = {noremap = true, silent = true}
     if opts then
         options = vim.tbl_extend("force", options, opts)
@@ -11,28 +11,49 @@ function utils.map(mode, lhs, rhs, opts)
     api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-function utils.nmap(key, cmd, opts)
+utils.nmap function(key, cmd, opts)
   return map("n", key, cmd, opts)
 end
 
-function utils.vmap(key, cmd, opts)
+utils.vmap function(key, cmd, opts)
   return map("v", key, cmd, opts)
 end
 
-function utils.xmap(key, cmd, opts)
+utils.xmap function(key, cmd, opts)
   return map("x", key, cmd, opts)
 end
 
-function utils.imap(key, cmd, opts)
+utils.imap function(key, cmd, opts)
   return map("i", key, cmd, opts)
 end
 
-function utils.omap(key, cmd, opts)
+utils.omap function(key, cmd, opts)
   return map("o", key, cmd, opts)
 end
 
-function utils.smap(key, cmd, opts)
+utils.smap = function(key, cmd, opts)
   return map("s", key, cmd, opts)
+end
+
+utils.sugar_folds = function()
+  local start_line = vim.fn.getline(vim.v.foldstart):gsub("\t", ("\t"):rep(vim.opt.tabstop:get()))
+  return string.format("%s ... (%d lines)", start_line, vim.v.foldend - vim.v.foldstart + 1)
+end
+
+--- Executes a git command and gets the output
+--- @param command string
+--- @param remove_newlines boolean
+--- @return string
+utils.get_git_output = function(command, remove_newlines)
+    local git_command_handler = io.popen(system.git_workspace .. command)
+    -- Read the command output and remove newlines if wanted
+    local command_output = git_command_handler:read("*a")
+    if remove_newlines then
+        command_output = command_output:gsub("[\r\n]", "")
+    end
+    -- Close child process
+    git_command_handler:close()
+    return command_output
 end
 
 return utils

@@ -15,9 +15,6 @@
 -- OR
 -- c-q -> g -> <c-a> <highlight and then increment numbers by one>
 
-local mappy = require "utils"
-mappy.map("n", "<leader-c><CR>", ":ColorizerToggle", opt)
-
 -- Function taken from NvimChad
 local function map(mode, lhs, rhs, opts)
     local options = {noremap = true, silent = true}

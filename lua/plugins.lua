@@ -38,10 +38,12 @@ return require('packer').startup(function(use)
     }
     use '~/Documents/Projects/lua-projects/dashy-lua'
 
-    --use {
-     --   "akinsho/toggleterm.nvim",
-    --    config = function() require("toggleterm").setup {} end
-    --}
+    use {
+        "akinsho/toggleterm.nvim",
+        config = function()
+            require 'plugins.termboi'
+        end
+    }
 
     use 'kyazdani42/nvim-web-devicons'
 
