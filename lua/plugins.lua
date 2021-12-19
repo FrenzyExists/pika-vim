@@ -17,6 +17,12 @@ return require('packer').startup(function(use)
    --         require 'plugins.lspconfig'
    --     end
    -- }
+    use {
+        'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require 'plugins.treesitter'
+        end
+    }
 
     use 'norcalli/nvim-colorizer.lua'
 
