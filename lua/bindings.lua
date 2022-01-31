@@ -78,7 +78,7 @@ map("v", "<Space>", "zA", opt)
 map("n", "Y", "y$", opt)
 
 -- Insert Current Time in current buffer
-map("v", "zM", "<C-R>=strftime('%c')<CR>", opt)
+map("n", "zM", "\"=strftime(\"%c\")<CR>P", opt)
 
 -- move the current line/block with Alt-j/k ala VSCode (INSERT)
 map("i", "<A-j>", "<Esc>:m .+1<CR>==gi", opt)
@@ -111,7 +111,7 @@ map("n", "<leader>_", ":set nu!<CR>", opt)
 map("n", "<C-a>", ":%y+<CR>", opt)
 
 -- open file tree
-map("n", "<C-n>", "NvimTreeToggle", opt)
+map("n", "<C-n>", ":NvimTreeToggle<CR>", opt)
 
 -- Pairing Braces
 map("i", "<>", "<><Left>", opt)

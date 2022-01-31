@@ -9,19 +9,35 @@ return require('packer').startup(function(use)
 
     use '/home/pikachu/Documents/Projects/vim-projects/aquarium-vim'
 
-    use '/home/pikachu/Documents/Projects/vim-projects/uwu.vim'
+    use 'hrsh7th/nvim-cmp'
+    use 'hrsh7th/cmp-nvim-lsp'
 
-   -- use {
-   --     'neovim/nvim-lspconfig',
-   --     config = function()
-   --         require 'plugins.lspconfig'
-   --     end
-   -- }
+    use 'tpope/vim-fugitive'
+   use {
+        'neovim/nvim-lspconfig',
+        config = function()
+            local lsp_installer = require("nvim-lsp-installer")
+
+            lsp_installer.on_server_ready(function(server)
+                local opts = {}
+
+                server:setup(opts)
+            end)
+        end
+    }
+
+    use 'williamboman/nvim-lsp-installer'
+
     use {
         'nvim-treesitter/nvim-treesitter',
         config = function()
             require 'plugins.treesitter'
         end
+    }
+
+    use {
+        'nvim-orgmode/orgmode',
+        config = function() require 'plugins.orgmode' end
     }
 
     use 'norcalli/nvim-colorizer.lua'
@@ -42,7 +58,6 @@ return require('packer').startup(function(use)
             require 'plugins.gitsigns'
         end
     }
-    use '~/Documents/Projects/lua-projects/dashy-lua'
 
     use {
         "akinsho/toggleterm.nvim",

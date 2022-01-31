@@ -74,16 +74,16 @@ _G.packer_plugins = {
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/aquarium-vim",
     url = "/home/pikachu/Documents/Projects/vim-projects/aquarium-vim"
   },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
   ["dashboard-nvim"] = {
     config = { "\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.dashboard\frequire\0" },
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
-  },
-  ["dashy-lua"] = {
-    loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/dashy-lua",
-    url = "/home/pikachu/Documents/Projects/lua-projects/dashy-lua"
   },
   ["feline.nvim"] = {
     config = { "\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugins.feline\frequire\0" },
@@ -97,10 +97,26 @@ _G.packer_plugins = {
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
   ["nvim-colorizer.lua"] = {
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
+  ["nvim-lspconfig"] = {
+    config = { "\27LJ\1\2%\0\1\5\0\1\0\0062\1\0\0\16\3\0\0007\2\0\0\16\4\1\0>\2\3\1G\0\1\0\nsetupO\1\0\3\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\1\2\0001\2\3\0>\1\2\1G\0\1\0\0\20on_server_ready\23nvim-lsp-installer\frequire\0" },
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     config = { "\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0" },
@@ -118,6 +134,12 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  orgmode = {
+    config = { "\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugins.orgmode\frequire\0" },
+    loaded = true,
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/orgmode",
+    url = "https://github.com/nvim-orgmode/orgmode"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -140,10 +162,10 @@ _G.packer_plugins = {
     path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
   },
-  ["uwu.vim"] = {
+  ["vim-fugitive"] = {
     loaded = true,
-    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/uwu.vim",
-    url = "/home/pikachu/Documents/Projects/vim-projects/uwu.vim"
+    path = "/home/pikachu/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   },
   ["vim-sneak"] = {
     loaded = true,
@@ -153,6 +175,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: orgmode
+time([[Config for orgmode]], true)
+try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugins.orgmode\frequire\0", "config", "orgmode")
+time([[Config for orgmode]], false)
 -- Config for: nvim-treesitter
 time([[Config for nvim-treesitter]], true)
 try_loadstring("\27LJ\1\0022\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\23plugins.treesitter\frequire\0", "config", "nvim-treesitter")
@@ -161,6 +187,10 @@ time([[Config for nvim-treesitter]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\1\0020\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\21plugins.gitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
+-- Config for: nvim-tree.lua
+time([[Config for nvim-tree.lua]], true)
+try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+time([[Config for nvim-tree.lua]], false)
 -- Config for: dashboard-nvim
 time([[Config for dashboard-nvim]], true)
 try_loadstring("\27LJ\1\0021\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\22plugins.dashboard\frequire\0", "config", "dashboard-nvim")
@@ -169,10 +199,10 @@ time([[Config for dashboard-nvim]], false)
 time([[Config for feline.nvim]], true)
 try_loadstring("\27LJ\1\2.\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\19plugins.feline\frequire\0", "config", "feline.nvim")
 time([[Config for feline.nvim]], false)
--- Config for: nvim-tree.lua
-time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\1\2;\0\0\2\0\3\0\a4\0\0\0%\1\1\0>\0\2\0027\0\2\0002\1\0\0>\0\2\1G\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
-time([[Config for nvim-tree.lua]], false)
+-- Config for: nvim-lspconfig
+time([[Config for nvim-lspconfig]], true)
+try_loadstring("\27LJ\1\2%\0\1\5\0\1\0\0062\1\0\0\16\3\0\0007\2\0\0\16\4\1\0>\2\3\1G\0\1\0\nsetupO\1\0\3\0\4\0\a4\0\0\0%\1\1\0>\0\2\0027\1\2\0001\2\3\0>\1\2\1G\0\1\0\0\20on_server_ready\23nvim-lsp-installer\frequire\0", "config", "nvim-lspconfig")
+time([[Config for nvim-lspconfig]], false)
 -- Config for: toggleterm.nvim
 time([[Config for toggleterm.nvim]], true)
 try_loadstring("\27LJ\1\2/\0\0\2\0\2\0\0044\0\0\0%\1\1\0>\0\2\1G\0\1\0\20plugins.termboi\frequire\0", "config", "toggleterm.nvim")
