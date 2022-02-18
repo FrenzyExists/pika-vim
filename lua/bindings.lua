@@ -34,7 +34,7 @@ map("", "<Up>", 'v:count ? "k" : "gk"', {expr = true})
 
 -- Save with ctrl+s, like every normal damn editor
 map("n", "<c-s>", ":w<cr>", opt)
-map("n", "<C-S>", ":wq<CR>", opt)
+map("n", "<C-x>", ":wq<CR>", opt)
 
 -- Better Tab Navigation (ala coño)
 map("n", "th", ":tabfirst<CR>", opt)

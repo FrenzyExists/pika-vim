@@ -6,11 +6,21 @@ return require('packer').startup(function(use)
     local cmd = vim.cmd
 
     use 'wbthomason/packer.nvim'
-
+    use 'rafamadriz/friendly-snippets'
     use '/home/pikachu/Documents/Projects/vim-projects/aquarium-vim'
-
-    use 'hrsh7th/nvim-cmp'
+    use {
+        'L3MON4D3/LuaSnip',
+        config = function() require 'plugins.cmp' end
+    }
     use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use {
+        'hrsh7th/nvim-cmp',
+        config = function()
+            require 'plugins.completion'
+        end
+    }
 
     use 'tpope/vim-fugitive'
    use {
